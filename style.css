@@ -1,9 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
 
-*{
-    font-family: 'Plus Jakarta Sans';
+* {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
+/* ============ BODY LAYOUT ============ */
 body {
     display: flex;
     flex-direction: row;
@@ -13,14 +17,12 @@ body {
 aside {
     width: 20%;
     border-right: 1px solid #d1d5db;
-    height: 100%;
+    height: 100vh;
 }
 
 .kanban-board {
     display: flex;
-    height: 100vh;
     flex-direction: column;
-    justify-content: center;
     width: 80%;
     padding: 20px;
     background-color: #ffffff;
@@ -77,14 +79,34 @@ aside {
     width: 100%;
 }
 
+/* Position the menu item relative, so we can place the badge absolutely */
 .menu-list .menu-item {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;  /* We'll handle spacing with the badge */
     align-items: center;
     padding: 10px 20px;
     border-radius: 10px;
     transition: background-color 0.3s;
+    position: relative; /* for absolutely positioned badge */
 }
+
+/* Only show the badge if data-count is present and not empty */
+.menu-item[data-count]:not([data-count=""])::after {
+    content: attr(data-count);
+    position: absolute;
+    right: 20px; /* or tweak as you like */
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #e0e7ff; /* light purple background */
+    color: #4f46e5;            /* text color */
+    border: 1px solid #4f46e5; /* purple border */
+    border-radius: 9999px;     /* pill shape or circle */
+    padding: 2px 6px;
+    font-size: 12px;
+    font-weight: bold;
+    pointer-events: none; /* so it doesn't block hover/click on the item */
+}
+
 
 .menu-list .menu-item:hover {
     background-color: #e5e7eb;
@@ -114,51 +136,81 @@ aside {
 }
 
 
-.kanban-header{
+/* ============ HEADER ============ */
+.kanban-header {
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
-    width: 100%;
+    align-items: center;
+    margin-bottom: 20px;
 }
 
-.kanban-header-buttons{
+.kanban-header-buttons {
     display: flex;
     gap: 20px;
-    padding: 5px 10px;
-    height: 30px;
-}
+}  
 
 .kanban-header-buttons button {
     display: contents;
 }
 
+/* ============ TABS WRAPPER ============ */
 .tabs {
     display: flex;
+    border-bottom: 1px solid #e5e7eb;
+    margin-bottom: 16px;
 }
+
+/* Each tab */
 .tab {
-    padding: 10px 20px;
+    position: relative;
+    padding: 10px 0;
+    margin-right: 32px; /* spacing between tabs */
+    color: #4b5563;     /* gray-700 */
+    font-size: 16px;
+    font-weight: 500;
     cursor: pointer;
-    border: 1px solid #ddd;
-    border-bottom: none;
-    background-color: #f1f1f1;
+    transition: color 0.2s ease-in-out;
 }
+
+/* Hover effect */
 .tab:hover {
-    background-color: #ddd;
-}
-input[name="tab"] {
-    display: none;
+    color: #4f46e5; /* same purple as the active color */
 }
 
+  /* Active tab style */
+.tab.active {
+    color: #4f46e5;
+    font-weight: 600;
+    border-bottom: 2px solid #4f46e5;
+}
+
+/* Show numeric badge if data-count is set */
+.tab::after {
+    content: attr(data-count);
+    display: none;
+    position: relative;
+    left: 6px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #4f46e5;
+    background-color: #eef2ff; /* light purple background */
+    padding: 2px 6px;
+    border: 1px solid #4f46e5;
+    border-radius: 9999px;
+}
+
+/* Only show the badge if data-count is not empty */
+.tab[data-count]:not([data-count=""])::after {
+    display: inline-block;
+}
+
+/* ============ CONTENT PANELS ============ */
 .content {
-    display: none;
+    display: none; 
     padding: 20px;
-    border: 1px solid #ddd;
+    background-color: #ffffff;
 }
 
-#tab1:checked ~ .content-1,
-#tab2:checked ~ .content-2,
-#tab3:checked ~ .content-3,
-#tab4:checked ~ .content-4,
-#tab5:checked ~ .content-5{
-    display: flex;
+.active-content {
+    display: block;
 }
