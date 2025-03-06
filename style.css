@@ -4,11 +4,121 @@
     font-family: 'Plus Jakarta Sans';
 }
 
+body {
+    display: flex;
+    flex-direction: row;
+    overflow-x: hidden;
+}
+
+aside {
+    width: 20%;
+    border-right: 1px solid #d1d5db;
+    height: 100%;
+}
+
+.kanban-board {
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    width: 80%;
+    padding: 20px;
+    background-color: #ffffff;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    justify-content: space-between;
+    margin-top: auto;
+    height:90vh;
+}
+
+.menu .menu-top{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.menu .profile {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px;
+    border-top: 1px solid #d1d5db;
+    margin-top: 20px;
+    align-items: center;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    border: 1px solid #d1d5db;
+    border-radius: 20px;
+    padding: 5px 10px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.search-box input{
+    outline: none;
+    border: none;
+}
+
+.search-box img {
+    width: 20px;
+    margin-right: 10px;
+}
+
+.menu-list {
+    width: 100%;
+}
+
+.menu-list .menu-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    border-radius: 10px;
+    transition: background-color 0.3s;
+}
+
+.menu-list .menu-item:hover {
+    background-color: #e5e7eb;
+}
+
+.menu-item-icon {
+    display: flex;
+    align-items: center;
+}
+
+.menu-item-icon img {
+    width: 20px;
+    margin-right: 10px;
+}
+
+.menu-item-icon p {
+    margin: 0;
+    font-size: 16px;
+    color: #374151;
+}
+
+.menu-list .menu-item img:last-child {
+    width: 20px;
+    background-color: #e5e7eb;
+    border-radius: 50%;
+    padding: 2px;
+}
+
+
 .kanban-header{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    width: 80%;
+    width: 100%;
 }
 
 .kanban-header-buttons{
@@ -20,4 +130,35 @@
 
 .kanban-header-buttons button {
     display: contents;
+}
+
+.tabs {
+    display: flex;
+}
+.tab {
+    padding: 10px 20px;
+    cursor: pointer;
+    border: 1px solid #ddd;
+    border-bottom: none;
+    background-color: #f1f1f1;
+}
+.tab:hover {
+    background-color: #ddd;
+}
+input[name="tab"] {
+    display: none;
+}
+
+.content {
+    display: none;
+    padding: 20px;
+    border: 1px solid #ddd;
+}
+
+#tab1:checked ~ .content-1,
+#tab2:checked ~ .content-2,
+#tab3:checked ~ .content-3,
+#tab4:checked ~ .content-4,
+#tab5:checked ~ .content-5{
+    display: flex;
 }

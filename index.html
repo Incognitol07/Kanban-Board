@@ -7,6 +7,71 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <aside>
+        <div class="menu">
+            <div class="menu-top">
+                <img src="assets/icons/Logo.svg" alt="logo">
+                <div class="search-box">
+                    <img src="assets/icons/Search Icon.svg" alt="">
+                    <input type="search" name="search" id="search" title="search" placeholder="Search...">
+                </div>
+                <div class="menu-list">
+                    <div class="menu-item">
+                        <div class="menu-item-icon">
+                            <img src="assets/icons/HouseSimple.svg" alt="Home icon">
+                            <p>Home</p>
+                        </div>
+                        <img src="assets/icons/Badge Text.svg" alt="Badge icon">
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-icon">
+                            <img src="assets/icons/ListBullets.svg" alt="Tasks icon">
+                            <p>Tasks</p>
+                        </div>
+                        <img src="assets/icons/Badge Text.svg" alt="Badge icon">
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-icon">
+                            <img src="assets/icons/Users.svg" alt="Users icon">
+                            <p>Users</p>
+                        </div>
+                        <img src="assets/icons/Badge Text.svg" alt="Badge icon">
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-icon">
+                            <img src="assets/icons/Cube.svg" alt="APIs icon">
+                            <p>APIs</p>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-icon">
+                            <img src="assets/icons/CreditCard.svg" alt="Subscription icon">
+                            <p>Subscription</p>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-icon">
+                            <img src="assets/icons/GearSix.svg" alt="Settings icon">
+                            <p>Settings</p>
+                        </div>
+                        <img src="assets/icons/Badge Text.svg" alt="Badge icon">
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-icon">
+                            <img src="assets/icons/Help.svg" alt="Help icon">
+                            <p>Help & Support</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="profile">
+                <img src="assets/icons/Avatar.svg" alt="Avatar icon">
+                <p>Adelodun Abraham</p>
+                <img src="assets/icons/Logout.svg" alt="Logout icon">
+            </div>
+        </div>
+    </aside>
     <div class="kanban-board">
         <div class="kanban-header">
             <h1>Kanban Dashboard🃏</h1>
@@ -15,6 +80,40 @@
                 <button type="button" id="share-button"><img src="assets/icons/Share button.svg" alt="Share button"></button>
                 <button type="button" id="export-button"><img src="assets/icons/Monotone add.svg" alt="Export Icon"></button>
                 <button type="button" id="add-button"><img src="assets/icons/Add Button.svg" alt="Add Button"></button>
+            </div>
+        </div>
+        <div class="kanban-container">
+            <input type="radio" id="tab1" name="tab" checked>
+            <input type="radio" id="tab2" name="tab">
+            <input type="radio" id="tab3" name="tab">
+            <input type="radio" id="tab4" name="tab">
+            <input type="radio" id="tab5" name="tab">
+    
+            <div class="tabs">
+                <label for="tab1" class="tab">By Status</label>
+                <label for="tab2" class="tab">By Total Tasks</label>
+                <label for="tab3" class="tab">Tasks Due</label>
+                <label for="tab4" class="tab">Extra Tasks</label>
+                <label for="tab5" class="tab">Tasks Completed</label>
+            </div>
+            <div class="content content-1">
+                <p>Hi</p>
+            </div>
+    
+            <div class="content content-2">
+                <p>Content for tab 2</p>
+            </div>
+    
+            <div class="content content-3">
+                <p>Content for tab 3</p>
+            </div>
+    
+            <div class="content content-4">
+                <p>Content for tab 4</p>
+            </div>
+    
+            <div class="content content-5">
+                <p>Content for tab 5</p>
             </div>
         </div>
     </div>
