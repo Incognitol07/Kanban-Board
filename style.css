@@ -214,3 +214,220 @@ aside {
 .active-content {
     display: block;
 }
+
+/* Parent container for the Sort label + dropdown */
+.sort {
+    display: flex;
+    align-items: center;
+    margin-left: auto; /* push the dropdown to the right if you want */
+    gap: 8px; /* spacing between label and dropdown */
+}
+
+/* The text “Sort By” */
+.sort p {
+    font-size: 14px;
+    color: #4b5563; /* gray-700 */
+    margin: 0;
+}
+
+/* Container for the button + hidden menu */
+.sort-dropdown {
+    position: relative; /* so the menu can be absolutely positioned */
+}
+
+/* The button that shows the current selection */
+.sort-dropdown-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    font-size: 14px;
+    color: #4b5563; /* gray-700 */
+    background-color: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 9999px; /* pill shape */
+    cursor: pointer;
+    outline: none;
+}
+
+/* The arrow icon on the right side of the button */
+.sort-arrow {
+    width: 0;
+    height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid #6b7280; /* gray-600 */
+    transition: transform 0.2s ease;
+}
+
+/* Rotate the arrow if the dropdown is open (we'll toggle a class in JS) */
+.sort-dropdown-btn.open .sort-arrow {
+    transform: rotate(180deg);
+}
+
+/* The hidden dropdown menu */
+.sort-dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 42px; /* just below the button */
+    left: 0;
+    background-color: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    min-width: 120px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    z-index: 999; /* ensure it appears on top */
+}
+
+/* Each item in the dropdown menu */
+.sort-dropdown-item {
+    padding: 8px 12px;
+    font-size: 14px;
+    color: #4b5563; /* gray-700 */
+    cursor: pointer;
+}
+
+.sort-dropdown-item:hover {
+    background-color: #f3f4f6; /* gray-100 */
+}
+
+/* Show the menu when we add .show in JS */
+.sort-dropdown-menu.show {
+    display: block;
+}
+
+
+/* ============ BOARD CONTAINER ============ */
+.board-container {
+    display: flex;
+    gap: 16px; /* space between columns */
+    margin-top: 20px; /* spacing above the board */
+}
+
+/* Each column */
+.board-column {
+    flex: 1; /* equal width columns */
+    min-width: 240px;
+    background-color: #F8FAFC;
+    border: 1px solid #e5e7eb;
+    border-radius: 32px;
+    padding: 16px;
+}
+
+/* Column header (e.g., “To Do (8)”) */
+.board-column-header {
+    margin-bottom: 16px;
+}
+.board-column-header h2 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #374151; /* gray-800 */
+}
+
+/* ============ CARDS ============ */
+.board-card {
+    background-color: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 32px;
+    padding: 16px;
+    margin-bottom: 16px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+}
+
+/* Top label (e.g., “Important”, “Not Important”, “OK”) */
+.card-label {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 4px 8px;
+    border-radius: 4px;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+}
+.label-important {
+    background-color: #fee2e2; /* light red background */
+    color: #b91c1c;            /* dark red text */
+}
+.label-not-important {
+    background-color: #fef9c3; /* light yellow background */
+    color: #92400e;            /* dark yellow text */
+}
+.label-ok {
+    background-color: #d1fae5; /* light green background */
+    color: #047857;            /* dark green text */
+}
+.label-high-priority {
+    background-color: #fee2e2; /* re-use red? */
+    color: #dc2626;            /* bright red text */
+}
+
+/* Card title (h3) */
+.board-card h3 {
+    font-size: 16px;
+    font-weight: 500;
+    color: #111827; /* near black */
+    margin-bottom: 8px;
+}
+
+/* Subtitle (e.g., “Progress 52%”) */
+.card-subtitle {
+    font-size: 14px;
+    color: #6b7280; /* gray-600 */
+    margin-bottom: 8px;
+}
+
+/* Progress bar container */
+.progress-bar {
+    position: relative;
+    width: 100%;
+    height: 8px;
+    background-color: #f3f4f6; /* gray-100 */
+    border-radius: 4px;
+    margin-bottom: 12px;
+}
+.progress-fill {
+    height: 100%;
+    background-color: #4f46e5; /* purple */
+    border-radius: 4px;
+    transition: width 0.3s ease;
+}
+
+/* Footer: Avatars + Stats */
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.avatar-group img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    margin-right: -8px; /* overlap effect if you want */
+    border: 2px solid #fff; /* white border around avatar */
+}
+.stats {
+    display: flex;
+    gap: 12px;
+    color: #6b7280; /* gray-600 */
+    font-size: 14px;
+}
+
+/* Generic dot styling */
+.status-dot {
+    display: inline-block;
+    width: 8px;       /* Dot size */
+    height: 8px;
+    border-radius: 50%;
+    margin-right: 8px; /* Space between dot and text */
+}
+
+/* Color variations */
+.status-dot.todo {
+    background-color: #3b82f6;  /* Blue */
+}
+.status-dot.in-progress {
+    background-color: #f59e0b;  /* Yellow/Orange */
+}
+.status-dot.completed {
+    background-color: #10b981;  /* Green */
+}

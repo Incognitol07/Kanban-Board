@@ -29,7 +29,7 @@
                             <p>Tasks</p>
                         </div>
                     </div>
-                    <div class="menu-item">
+                    <div class="menu-item" data-count="2">
                         <div class="menu-item-icon">
                             <img src="assets/icons/Users.svg" alt="Users icon" />
                             <p>Users</p>
@@ -108,17 +108,183 @@
                 <div class="tab" data-target="content-5">
                     Tasks Completed
                 </div>
+                <div class="sort">
+                    <p>Sort By</p>
+                    <div class="sort-dropdown">
+                        <button type="button" id="sortDropdownBtn" class="sort-dropdown-btn">
+                            Newest
+                            <span class="sort-arrow"></span>
+                        </button>
+                        <div id="sortDropdownMenu" class="sort-dropdown-menu">
+                            <div class="sort-dropdown-item" data-value="newest">Newest</div>
+                            <div class="sort-dropdown-item" data-value="oldest">Oldest</div>
+                            <div class="sort-dropdown-item" data-value="alphabetical">Alphabetical</div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <!-- Tab Content -->
             <div class="content content-1 active-content">
-                <p>Hi</p>
+                <!-- 3-Column Board Container (example from frame.png) -->
+                <div class="board-container">
+
+                    <!-- Column 1: TO DO (8) -->
+                    <div class="board-column">
+                        <div class="board-column-header">
+                            <h2><span class="status-dot todo"></span>To Do (8)</h2>
+                        </div>
+                        <!-- Card 1 -->
+                        <div class="board-card">
+                            <div class="card-label label-important">Important</div>
+                            <h3>UX/UI Design in the Age of AI</h3>
+                            <p class="card-subtitle">Progress <strong>52%</strong></p>
+                            <div class="progress-bar">
+                            <div class="progress-fill" style="width: 52%;"></div>
+                            </div>
+                            <div class="card-footer">
+                            <div class="avatar-group">
+                                <!-- Replace with your own avatar images -->
+                                <img src="assets/icons/Avatar.svg" alt="Avatar" />
+                                <img src="assets/icons/Avatar.svg" alt="Avatar" />
+                            </div>
+                            <div class="stats">
+                                <span><img src="assets/icons/ChatTeardropDots.svg" alt="ChatTeardropDots"></span>
+                                <span>987</span>
+                                <span><img src="assets/icons/CheckCircle.svg" alt="CheckCircle"></span>
+                                <span>2.1K</span>
+                            </div>
+                        </div>
+                        </div>
+                    
+                        <!-- Card 2 -->
+                        <div class="board-card">
+                            <div class="card-label label-not-important">Not Important</div>
+                            <h3>Responsive Website Design for 23 more clients</h3>
+                            <p class="card-subtitle">Progress <strong>0%</strong></p>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 0%;"></div>
+                            </div>
+                            <div class="card-footer">
+                            <div class="avatar-group">
+                                <img src="assets/icons/Avatar.svg" alt="Avatar" />
+                            </div>
+                            <div class="stats">
+                                <span><img src="assets/icons/ChatTeardropDots.svg" alt="ChatTeardropDots"></span>
+                                <span>115</span>
+                                <span><img src="assets/icons/CheckCircle.svg" alt="CheckCircle"></span>
+                                <span>0</span>
+                            </div>
+                        </div>
+                        </div>
+                    
+                        <!-- Card 3 -->
+                        <div class="board-card">
+                            <div class="card-label label-ok">OK</div>
+                            <h3>Blog Copywriting (Low priority)</h3>
+                            <p class="card-subtitle">Progress <strong>0%</strong></p>
+                            <div class="progress-bar">
+                            <div class="progress-fill" style="width: 0%;"></div>
+                        </div>
+                        <div class="card-footer">
+                                <div class="avatar-group">
+                                <img src="assets/icons/Avatar.svg" alt="Avatar" />
+                            </div>
+                            <div class="stats">
+                                <span><img src="assets/icons/ChatTeardropDots.svg" alt="ChatTeardropDots"></span>
+                                <span>67</span>
+                                <span><img src="assets/icons/CheckCircle.svg" alt="CheckCircle"></span>
+                                <span>1</span>
+                            </div>
+                        </div>
+                        </div>
+                
+                        <!-- Add more cards if you want -->
+                    </div>
+                
+                    <!-- Column 2: IN PROGRESS (2) -->
+                    <div class="board-column">
+                    <div class="board-column-header">
+                        <h2><span class="status-dot in-progress"></span>In Progress (2)</h2>
+                    </div>
+                    <!-- Card 1 -->
+                    <div class="board-card">
+                        <div class="card-label label-important">Important</div>
+                        <h3>Machine Learning Progress</h3>
+                        <p class="card-subtitle">Progress <strong>52%</strong></p>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 52%;"></div>
+                        </div>
+                        <div class="card-footer">
+                            <div class="avatar-group">
+                                <img src="assets/icons/Avatar.svg" alt="Avatar" />
+                            </div>
+                            <div class="stats">
+                                <span><img src="assets/icons/ChatTeardropDots.svg" alt="ChatTeardropDots"></span>
+                                <span>13</span>
+                                <span><img src="assets/icons/CheckCircle.svg" alt="CheckCircle"></span>
+                                <span>52</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 2 -->
+                    <div class="board-card">
+                        <div class="card-label label-ok">OK</div>
+                        <h3>Learn Computer Science</h3>
+                        <p class="card-subtitle">Progress <strong>28%</strong></p>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 28%;"></div>
+                        </div>
+                        <div class="card-footer">
+                            <div class="avatar-group">
+                            <img src="assets/icons/Avatar.svg" alt="Avatar" />
+                        </div>
+                        <div class="stats">
+                            <span><img src="assets/icons/ChatTeardropDots.svg" alt="ChatTeardropDots"></span>
+                            <span>99</span>
+                            <span><img src="assets/icons/CheckCircle.svg" alt="CheckCircle"></span>
+                            <span>13</span>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+                
+                    <!-- Column 3: COMPLETED (7) -->
+                    <div class="board-column">
+                        <div class="board-column-header">
+                        <h2><span class="status-dot completed"></span>Completed (7)</h2>
+                    </div>
+                    <!-- Card 1 -->
+                    <div class="board-card">
+                        <div class="card-label label-high-priority">High Priority</div>
+                        <h3>User flow confirmation for fintech App</h3>
+                        <p class="card-subtitle">Done</p>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 100%;"></div>
+                        </div>
+                        <div class="card-footer">
+                            <div class="avatar-group">
+                                <img src="assets/icons/Avatar.svg" alt="Avatar" />
+                                <img src="assets/icons/Avatar.svg" alt="Avatar" />
+                            </div>
+                            <div class="stats">
+                                <span><img src="assets/icons/ChatTeardropDots.svg" alt="ChatTeardropDots"></span>
+                                <span>201</span>
+                                <span><img src="assets/icons/CheckCircle.svg" alt="CheckCircle"></span>
+                                <span>1.8K</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Add more completed cards as needed -->
+                    </div>
+                
+                </div>
             </div>
 
             <div class="content content-2">
                 <p>Content for tab 2</p>
             </div>
-
+            
             <div class="content content-3">
                 <p>Content for tab 3</p>
             </div>
@@ -126,7 +292,7 @@
             <div class="content content-4">
                 <p>Content for tab 4</p>
             </div>
-
+            
             <div class="content content-5">
                 <p>Content for tab 5</p>
             </div>

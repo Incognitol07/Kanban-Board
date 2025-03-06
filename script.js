@@ -16,4 +16,37 @@ document.addEventListener('DOMContentLoaded', () => {
             document.querySelector(`.${targetClass}`).classList.add('active-content');
         });
     });
+
+    const sortBtn = document.getElementById('sortDropdownBtn');
+    const sortMenu = document.getElementById('sortDropdownMenu');
+    const sortItems = document.querySelectorAll('.sort-dropdown-item');
+
+    // Toggle open/close on button click
+    sortBtn.addEventListener('click', (e) => {
+        e.stopPropagation(); // prevent click from bubbling
+        // Toggle the menu
+        sortMenu.classList.toggle('show');
+        // Toggle the arrow rotation
+        sortBtn.classList.toggle('open');
+    });
+
+    // Close dropdown if user clicks outside
+    document.addEventListener('click', (e) => {
+        if (!sortBtn.contains(e.target) && !sortMenu.contains(e.target)) {
+        sortMenu.classList.remove('show');
+        sortBtn.classList.remove('open');
+        }
+    });
+
+    // Handle clicks on each dropdown item
+    sortItems.forEach(item => {
+        item.addEventListener('click', () => {
+        // 1. Update button text to chosen value
+        sortBtn.firstChild.textContent = item.textContent.trim();
+
+        // 2. Hide the dropdown
+        sortMenu.classList.remove('show');
+        sortBtn.classList.remove('open');
+        });
+    });
 });
