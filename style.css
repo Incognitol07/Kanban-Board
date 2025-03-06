@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
+*{
+    font-family: 'Plus Jakarta Sans';
+}
+
+.kanban-header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 80%;
+}
+
+.kanban-header-buttons{
+    display: flex;
+    gap: 20px;
+    padding: 5px 10px;
+    height: 30px;
+}
+
+.kanban-header-buttons button {
+    display: contents;
+}
