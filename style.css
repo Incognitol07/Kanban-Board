@@ -312,6 +312,7 @@ aside {
     border: 1px solid #e5e7eb;
     border-radius: 32px;
     padding: 16px;
+    height: fit-content;
 }
 
 /* Column header (e.g., “To Do (8)”) */
